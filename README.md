@@ -4,6 +4,8 @@
 
 Welcome to Job Leet, a powerful job portal website designed to connect job seekers with the right opportunities. This project is built using React, TypeScript, Material-UI, and Styled Components for the frontend, with Vite as the development build tool.
 
+Find the Backend Development repository of this project [Here](https://github.com/Nix-code/Job-Leet-core-api)
+
 ## Getting Started
 
 ### Prerequisites
