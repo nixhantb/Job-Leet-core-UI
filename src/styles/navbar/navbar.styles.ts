@@ -15,6 +15,6 @@ export const NavBarTitle = styled(Typography)(() => ({}));
 
 export const NavBarTitleCustomStyles = {};
 
-export const NavBarItems = styled(List)<NavBarItemsProps>((props) => ({}));
+export const NavBarItems = styled(List)<NavBarItemsProps>(() => ({}));
 
 export const NavBarItemsCustomStyles = {};
