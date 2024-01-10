@@ -1,6 +1,6 @@
 // static data
 
-const NavBarLabels  = {
+const navBarLabels  = {
     website_name: "Job Leet",
     navbar_home: "Home",
     navbar_jobs: "Find Jobs",
@@ -9,5 +9,5 @@ const NavBarLabels  = {
     navbar_resume: "Resume templates",
     navbar_login: "Login",
     navbar_signup: "Signup"
-
 }
+export default navBarLabels;

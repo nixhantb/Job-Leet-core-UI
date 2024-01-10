@@ -1,7 +1,8 @@
+import NavBarDesktop from "./components/navbar/NavBarDesktop";
 
 const App = () => {
   return (
-    <h1>Hello Job Leet</h1>
+    <NavBarDesktop/>
   )
 }
 
