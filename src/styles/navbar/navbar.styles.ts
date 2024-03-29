@@ -37,9 +37,9 @@ export const primaryTypographyHeaderStyle = {
 };
 
 export const primaryTypographyStyle = {
-  fontSize: "14px",
+  fontSize: "15px",
   fontFamily: "'Montserrat Variable', 'sans-serif'",
-  fontWeight: "600",
+  fontWeight: "500",
 };
 
 export const primaryTypographyStyleSignUp = {
