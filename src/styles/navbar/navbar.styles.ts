@@ -31,15 +31,15 @@ export const NavBarItemsContainer = styled(List)<NavBarItemsProps>((props) => ({
 }));
 
 export const primaryTypographyHeaderStyle = {
-  fontSize: "24px",
+  fontSize: "36px",
   fontWeight: "600",
-  color: Colors.title,
+  color: Colors.jungleGreen,
 };
 
 export const primaryTypographyStyle = {
-  fontSize: "15px",
+  fontSize: "17px",
   fontFamily: "'Montserrat Variable', 'sans-serif'",
-  fontWeight: "500",
+  fontWeight: "600",
 };
 
 export const primaryTypographyStyleSignUp = {

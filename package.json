@@ -13,6 +13,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/montserrat": "^5.0.17",
+    "@fontsource-variable/open-sans": "^5.0.28",
     "@fontsource/poppins": "^5.0.8",
     "@mui/material": "^5.14.18",
     "react": "^18.2.0",

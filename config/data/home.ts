@@ -10,4 +10,10 @@ const navBarLabels  = {
     navbar_login: "Login",
     navbar_signup: "Signup"
 }
-export default navBarLabels;
+
+const HeroBodyLabels = {
+    body_title_name: "Find internships & full time developer Jobs",
+    body_description : "Unleashing Opportunities, Your Ultimate Hub for internships and Full-time Jobs!"
+}
+
+export { navBarLabels, HeroBodyLabels };
