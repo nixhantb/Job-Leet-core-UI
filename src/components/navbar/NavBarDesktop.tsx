@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import NavBarLabels from "../../../config/data/home";
+import {navBarLabels} from "../../../config/data/home";
 import {
   NavBarContainer,
   NavBarItemsContainer,
@@ -23,7 +23,7 @@ const NavBarDesktop: FC = () => {
     navbar_resume,
     navbar_login,
     navbar_signup,
-  } = NavBarLabels;
+  } = navBarLabels;
 
   return (
     <NavBarContainer>
