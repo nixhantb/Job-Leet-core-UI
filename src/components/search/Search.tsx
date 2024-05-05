@@ -11,10 +11,13 @@ import CountrySelect from "./SearchCountry";
 
 const Search: FC = () => {
   const companySkillsPositionsKeywords = [
+    "Internship",
+    "Junior Software Engineer",
     "Software Developer",
     "Frontend Developer",
     "Backend Developer",
     "UI/UX Designer",
+    "Others"
   ];
   const experience = [
     "Internships",
@@ -41,7 +44,7 @@ const Search: FC = () => {
           <CountrySelect />
         </SearchBar>
         <SearchButton>
-          <StyledButton variant="contained" size="large">
+          <StyledButton variant="contained" size="large" sx = {{fontWeight: '600'}}>
             {ButtonKey}
           </StyledButton>
         </SearchButton>

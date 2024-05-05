@@ -5,13 +5,13 @@ import { Button } from "@mui/material";
 
 export const SearchBarContainer = styled(Box)(({ theme }) => ({
   width: "100%", 
-  maxWidth: "40em", 
+  maxWidth: "100em", 
   height: "10vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   background: "white",
-  marginTop: '1em'
+  marginTop: '1.5em',
 }));
 
 export const SearchBar = styled(Box)(({ theme }) => ({
@@ -19,23 +19,23 @@ export const SearchBar = styled(Box)(({ theme }) => ({
 }));
 
 export const SearchButton = styled(Box)(() => ({
-  ...SearchBar,
+  ...SearchBar
 }));
 
 export const StyledButton = styled(Button)`
   && {
     margin-left: 0.7em;
     padding: 15px;
-    width: 10em;
+    width: 14vw;
     color: ${Colors.pampas};
     background-color: ${Colors.title};
   }
 `;
 export const searchFormStyles = {
   margin: 1,
-  width: 242
+  width: '26vw'
 };
 export const searchFormCountryStyles = {
   margin: 1,
-  width: 200
+  width: '14vw'
 };

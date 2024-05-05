@@ -33,7 +33,7 @@ export default function CountrySelect() {
           label="Choose a country"
           inputProps={{
             ...params.inputProps,
-            autoComplete: "new-password", 
+            autoComplete: "", 
           }}
         />
       )}
