@@ -7,7 +7,7 @@ import "@fontsource-variable/open-sans";
 export const HeroBodyContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "center"
 }));
 
 export const HeroBodyImage = styled("img")(({ src, theme }) => ({
@@ -22,10 +22,10 @@ export const HeroBodyDescriptionContainer = styled(Box)(({ theme }) => ({
   margin: "0.7% auto 1%",
   paddingTop: '1em',
   width: "58vw",
-  height: "30vh",
+  height: "auto",
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
+  alignItems: 'center'
 }));
 
 export const HeroBodyDescriptionTitle = styled(Typography)(({ theme }) => ({
@@ -34,15 +34,17 @@ export const HeroBodyDescriptionTitle = styled(Typography)(({ theme }) => ({
   lineHeight: "1.3",
   textAlign: 'left',
   marginTop: '2vw',
+  marginRight: '2em',
   width: '40vw',
   color: Colors.jungleGreen,
 }));
+
 export const HeroBodyDescriptionContent = styled(Typography)(({ theme }) => ({
   fontSize: "1.2vw",
   fontWeight: "400",
   width: "27em",
   textAlign: 'left',
-  margin: "2em 5.5em",
+  margin: "2em",
   lineHeight: "1.2",
   letterSpacing: 1.25,
   color: Colors.pewter,
