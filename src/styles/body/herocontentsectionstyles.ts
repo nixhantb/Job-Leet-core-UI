@@ -1,9 +1,9 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Colors } from "../basetheme/basetheme";
-
 import { Typography } from "@mui/material";
 import "@fontsource-variable/open-sans";
+
 export const HeroBodyContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
@@ -14,8 +14,7 @@ export const HeroBodyImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   width: "28vw",
   height: "45vh",
-  margin: "0% auto",
-  
+  margin: "0% auto"
 }));
 
 export const HeroBodyDescriptionContainer = styled(Box)(({ theme }) => ({
@@ -34,7 +33,7 @@ export const HeroBodyDescriptionTitle = styled(Typography)(({ theme }) => ({
   lineHeight: "1.3",
   textAlign: 'left',
   marginTop: '2vw',
-  marginRight: '2em',
+  marginRight: '3em',
   width: '40vw',
   color: Colors.jungleGreen,
 }));
@@ -48,7 +47,7 @@ export const HeroBodyDescriptionContent = styled(Typography)(({ theme }) => ({
   lineHeight: "1.2",
   letterSpacing: 1.25,
   color: Colors.pewter,
-  marginRight: '12em'
+  marginRight: '15em'
 }));
 
 export const HeroContainerSearch = styled(Box)(({ theme }) => ({

@@ -2,14 +2,15 @@ import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Colors } from "../basetheme/basetheme";
 import { Button } from "@mui/material";
+
 export const SearchBarContainer = styled(Box)(({ theme }) => ({
-  width: "auto",
+  width: "100%", 
+  maxWidth: "40em", 
   height: "10vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   background: "white",
-  marginRight: '35em',
   marginTop: '1em'
 }));
 
@@ -30,3 +31,11 @@ export const StyledButton = styled(Button)`
     background-color: ${Colors.title};
   }
 `;
+export const searchFormStyles = {
+  margin: 1,
+  width: 242
+};
+export const searchFormCountryStyles = {
+  margin: 1,
+  width: 200
+};

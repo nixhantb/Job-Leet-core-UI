@@ -5,6 +5,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { searchFormStyles } from "../../styles/search/searchstyles";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -42,7 +43,7 @@ export default function SearchKeywords(props: SearchKeywordsProps) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={searchFormStyles}>
         <InputLabel id="multiple-keywords-label"> {props.label}</InputLabel>
         <Select
           labelId="multiple-keywords-label"

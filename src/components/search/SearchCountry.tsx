@@ -1,12 +1,13 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { searchFormCountryStyles } from "../../styles/search/searchstyles";
 
 export default function CountrySelect() {
   return (
     <Autocomplete
       id="country-select-id"
-      sx={{ width: 300 }}
+      sx={searchFormCountryStyles}
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
