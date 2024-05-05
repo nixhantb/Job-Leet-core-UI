@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import { styled } from "@mui/material/styles";
-import { List, Typography, colors } from "@mui/material";
+import { List, Typography} from "@mui/material";
 import { Colors } from "../basetheme/basetheme";
 import "@fontsource-variable/montserrat";
 
