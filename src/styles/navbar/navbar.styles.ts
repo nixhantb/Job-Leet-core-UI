@@ -87,3 +87,10 @@ export const textStyleListItemText = {
 };
 
 export const NavBarItemsCustomStyles = {};
+
+// Mobile
+export const primaryTypographyHeaderStyleMobile = {
+  fontSize: "30px",
+  fontWeight: "600",
+  color: Colors.jungleGreen,
+};
