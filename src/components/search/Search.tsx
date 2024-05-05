@@ -4,12 +4,18 @@ import {
   SearchBarContainer,
   SearchButton,
   StyledButton,
+  StyledButtonMobile,
 } from "../../styles/search/searchstyles";
-
-import SearchKeywords from "./SearchKeywords";
-import CountrySelect from "./SearchCountry";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import SearchCountryMobile from "./SearchCountryMobile";
+import SearchKeywordsMobile from "./SearchKeywordsMobile";
+import SearchKeywordsDesktop from "./SearchKeywordsDesktop";
+import SearchCountryDesktop from "./SearchCountry";
 
 const Search: FC = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   const companySkillsPositionsKeywords = [
     "Internship",
     "Junior Software Engineer",
@@ -17,7 +23,7 @@ const Search: FC = () => {
     "Frontend Developer",
     "Backend Developer",
     "UI/UX Designer",
-    "Others"
+    "Others",
   ];
   const experience = [
     "Internships",
@@ -32,21 +38,39 @@ const Search: FC = () => {
     <>
       <SearchBarContainer>
         <SearchBar>
-          <SearchKeywords
+          {matches? <SearchKeywordsMobile
             label="keywords, skills & positions"
             keywords={companySkillsPositionsKeywords}
-          />
+          /> : <SearchKeywordsDesktop
+          label="keywords, skills & positions"
+          keywords={companySkillsPositionsKeywords}
+        />}
+          
         </SearchBar>
         <SearchBar>
-          <SearchKeywords label="Experience" keywords={experience} />
+          {matches? <SearchKeywordsMobile label="Experience" keywords={experience} /> : <SearchKeywordsDesktop label="Experience" keywords={experience} />}
         </SearchBar>
         <SearchBar>
-          <CountrySelect />
+          {matches? <SearchCountryMobile /> : <SearchCountryDesktop/>}
         </SearchBar>
         <SearchButton>
-          <StyledButton variant="contained" size="large" sx = {{fontWeight: '600'}}>
-            {ButtonKey}
-          </StyledButton>
+          {matches ? (
+            <StyledButtonMobile
+              variant="contained"
+              size="large"
+              sx={{ fontWeight: "600" }}
+            >
+              {ButtonKey}
+            </StyledButtonMobile>
+          ) : (
+            <StyledButton
+              variant="contained"
+              size="small"
+              sx={{ fontWeight: "600" }}
+            >
+              {ButtonKey}
+            </StyledButton>
+          )}
         </SearchButton>
       </SearchBarContainer>
     </>

@@ -5,7 +5,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { searchFormStyles } from "../../styles/search/searchstyles";
+import { searchKeywordsStylesMobile } from "../../styles/search/searchstyles";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -30,7 +30,7 @@ interface SearchKeywordsProps {
   label: string;
   keywords: string[];
 }
-export default function SearchKeywords(props: SearchKeywordsProps) {
+export default function SearchKeywordsMobile(props: SearchKeywordsProps) {
   const theme = useTheme();
   const [searchKeyword, setSearchkeyword] = React.useState<string[]>([]);
 
@@ -43,7 +43,7 @@ export default function SearchKeywords(props: SearchKeywordsProps) {
 
   return (
     <div>
-      <FormControl sx={searchFormStyles}>
+      <FormControl sx={searchKeywordsStylesMobile}>
         <InputLabel id="multiple-keywords-label"> {props.label}</InputLabel>
         <Select
           labelId="multiple-keywords-label"
@@ -56,6 +56,7 @@ export default function SearchKeywords(props: SearchKeywordsProps) {
         >
           {props.keywords.map((keyword) => (
             <MenuItem
+              sx={{ fontSize: "small" }}
               key={keyword}
               value={keyword}
               style={getStyles(keyword, searchKeyword, theme)}

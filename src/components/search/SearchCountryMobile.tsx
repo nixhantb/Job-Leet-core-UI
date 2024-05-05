@@ -1,23 +1,22 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { searchFormCountryStyles } from "../../styles/search/searchstyles";
-
-export default function SearchCountryDesktop() {
+import {searchFormCountryStylesMobile } from "../../styles/search/searchstyles";
+export default function SearchCountryMobile() {
   return (
     <Autocomplete
       id="country-select-id"
-      sx={searchFormCountryStyles}
+      sx={searchFormCountryStylesMobile}
       options={countries}
       autoHighlight
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (
         <Box
           component="li"
-          sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+          sx={{ "& > img": { mr: 1}, fontSize: 'small'}}
           {...props}
         >
-          <img
+            <img
             loading="lazy"
             width="20"
             srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
@@ -30,7 +29,7 @@ export default function SearchCountryDesktop() {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Choose a country"
+          label="country"
           inputProps={{
             ...params.inputProps,
             autoComplete: "", 

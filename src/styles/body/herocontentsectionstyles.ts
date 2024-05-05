@@ -82,7 +82,7 @@ export const HeroBodyDescriptionContent = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const HeroContainerSearch = styled(Box)(({ theme }) => ({
+export const HeroContainerSearch = styled(Box)(() => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
