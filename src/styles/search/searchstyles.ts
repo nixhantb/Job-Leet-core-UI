@@ -9,7 +9,8 @@ export const SearchBarContainer = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   background: "white",
-  marginRight: "35em",
+  marginRight: '35em',
+  marginTop: '1em'
 }));
 
 export const SearchBar = styled(Box)(({ theme }) => ({
@@ -18,8 +19,6 @@ export const SearchBar = styled(Box)(({ theme }) => ({
 
 export const SearchButton = styled(Box)(() => ({
   ...SearchBar,
-  color: Colors.biscay,
-  background: Colors.pampas,
 }));
 
 export const StyledButton = styled(Button)`
