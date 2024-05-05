@@ -26,7 +26,6 @@ export const HeroBodyDescriptionContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  // border: '1px solid red'
 }));
 
 export const HeroBodyDescriptionTitle = styled(Typography)(({ theme }) => ({
