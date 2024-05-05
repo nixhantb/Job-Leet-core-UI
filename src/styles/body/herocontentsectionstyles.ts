@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Colors } from "../basetheme/basetheme";
-import { css } from 'styled-components';
 
 import { Typography } from "@mui/material";
 import "@fontsource-variable/open-sans";
