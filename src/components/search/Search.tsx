@@ -21,7 +21,7 @@ const Search: FC = () => {
     "Entry Level",
     "Intermediate Level",
     "Senior Level",
-    "Others"
+    "Others",
   ];
 
   const ButtonKey = "Find Jobs";
@@ -45,7 +45,6 @@ const Search: FC = () => {
             {ButtonKey}
           </StyledButton>
         </SearchButton>
-        ;
       </SearchBarContainer>
     </>
   );

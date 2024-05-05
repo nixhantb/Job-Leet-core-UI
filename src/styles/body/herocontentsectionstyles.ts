@@ -8,18 +8,18 @@ export const HeroBodyContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  marginTop: "3em",
+  marginTop: "1em",
 }));
 
 export const HeroBodyImage = styled("img")(({ src, theme }) => ({
   src: `url(${src})`,
   width: "40em",
-  height: "55vh",
-  margin: "1% auto",
+  height: "45vh",
+  margin: "0% auto",
 }));
 
 export const HeroBodyDescriptionContainer = styled(Box)(({ theme }) => ({
-  margin: "1% auto 1%",
+  margin: "0% auto 1%",
   width: "55em",
   height: "24vh",
 }));

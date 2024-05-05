@@ -1,9 +1,11 @@
 import { FC } from "react";
 
-import {navBarLabels} from "../../../config/data/home";
+import { navBarLabels } from "../../../config/data/home";
 import {
+  ListItemButtonStyle,
   NavBarContainer,
   NavBarItemsContainer,
+  NavBarItemsContainerLoginSignUp,
   NavBarTitle,
   primaryTypographyHeaderStyle,
   primaryTypographyStyle,
@@ -38,7 +40,7 @@ const NavBarDesktop: FC = () => {
       </NavBarTitle>
 
       <NavBarItemsContainer types="rows">
-        <ListItemButton>
+        <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_home}
             primaryTypographyProps={primaryTypographyStyle}
@@ -46,7 +48,7 @@ const NavBarDesktop: FC = () => {
           ></ListItemText>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_company}
             primaryTypographyProps={primaryTypographyStyle}
@@ -54,7 +56,7 @@ const NavBarDesktop: FC = () => {
           ></ListItemText>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_salaries}
             primaryTypographyProps={primaryTypographyStyle}
@@ -62,7 +64,7 @@ const NavBarDesktop: FC = () => {
           ></ListItemText>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_jobs}
             primaryTypographyProps={primaryTypographyStyle}
@@ -70,7 +72,7 @@ const NavBarDesktop: FC = () => {
           ></ListItemText>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_resume}
             primaryTypographyProps={primaryTypographyStyle}
@@ -79,7 +81,7 @@ const NavBarDesktop: FC = () => {
         </ListItemButton>
       </NavBarItemsContainer>
 
-      <NavBarItemsContainer types="rows">
+      <NavBarItemsContainerLoginSignUp types="rows">
         <ListItemButton>
           <ListItemText
             primary={navbar_login}
@@ -95,7 +97,7 @@ const NavBarDesktop: FC = () => {
             sx={textStyleListItemText}
           ></ListItemText>
         </ListItemButton>
-      </NavBarItemsContainer>
+      </NavBarItemsContainerLoginSignUp>
     </NavBarContainer>
   );
 };

@@ -15,6 +15,7 @@ const HeroContentSection: FC = () => {
   const { body_title_name, body_description } = HeroBodyLabels;
   return (
     <>
+    
       <HeroBodyContainer>
         <HeroBodyDescriptionContainer>
           <HeroBodyDescriptionTitle>{body_title_name}</HeroBodyDescriptionTitle>
