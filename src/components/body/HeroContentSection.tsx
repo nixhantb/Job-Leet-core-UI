@@ -10,6 +10,7 @@ import {
 import HeroImage from "../../assets/images/HeroBodyImage.jpg";
 import { HeroBodyLabels } from "../../../config/data/home";
 import Search from "../search/Search";
+import TopJobCategories from "./TopJobCategories";
 
 const HeroContentSection: FC = () => {
   const { body_title_name, body_description } = HeroBodyLabels;
@@ -27,6 +28,7 @@ const HeroContentSection: FC = () => {
       <HeroContainerSearch>
         <Search />
       </HeroContainerSearch>
+      <TopJobCategories/>
     </>
   );
 };
