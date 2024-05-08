@@ -11,7 +11,7 @@ export const NavBarContainer = styled(Box)(() => ({
   padding: "0.5em 0.6em",
   display: "flex",
   alignItems: "center",
-  justifyContent: "space-around",
+  justifyContent: "space-between",
   color: Colors.black,
   background: "white",
   position: "sticky",
@@ -20,8 +20,6 @@ export const NavBarContainer = styled(Box)(() => ({
 }));
 
 export const NavBarTitle = styled(Typography)(() => ({}));
-
-export const NavBarTitleCustomStyles = {};
 
 export const NavBarItemsContainer = styled(List)<NavBarItemsProps>((props) => ({
   display: props.types === "rows" ? "flex" : "block",
