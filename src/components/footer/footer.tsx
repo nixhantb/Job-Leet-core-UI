@@ -71,12 +71,12 @@ const Footer: FC = () => {
       <FooterContainer>
         <FooterResources>
           <FooterBox>
-            <FooterTitle>
-              <ListItemButton>
+            <FooterTitle >
+              <ListItemButton >
                 <ListItemText
                   primary="Job Leet"
                   primaryTypographyProps={{
-                    style: { fontSize: "33px" },
+                    style: { fontSize: "33px"},
                     ...primaryTypographyHeaderStyle,
                   }}
                 ></ListItemText>

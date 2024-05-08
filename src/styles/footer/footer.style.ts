@@ -43,11 +43,11 @@ export const FooterContainer = styled(Box)(({theme}) => ({
   export const FooterDescription = styled(Typography)(({theme}) => ({
     marginTop: "0.5em",
     marginLeft :'1em',
-    fontSize: "14px",
+    fontSize: "15px",
     color: "white",
     fontFamily: "'Montserrat Variable', 'sans-serif'",
     [theme.breakpoints.down("md")]: {
-        fontSize: "12px"
+        fontSize: "12px",
     }
   }));
   
