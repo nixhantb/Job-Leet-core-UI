@@ -16,7 +16,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Colors } from "../../styles/basetheme/basetheme";
 const Footer: FC = () => {
   // Dummy Data for static frontend page
   const companyDescriptions = [
@@ -53,9 +52,6 @@ const Footer: FC = () => {
       { label: "Careers", url: "https://example.com/link3" },
     ],
   };
-
-  
-  
 
   const renderLinks = (links: { label: string; url: string }[]) => {
     return links.map((link, index) => (
@@ -109,6 +105,9 @@ const Footer: FC = () => {
           </IconButton>
           <IconButton aria-label="menu-icon">
             <LinkedInIcon sx={IconStyles} />
+          </IconButton>
+          <IconButton aria-label="menu-icon">
+            <GitHubIcon sx={IconStyles} />
           </IconButton>
         </FooterSocials>
       </FooterContainer>
