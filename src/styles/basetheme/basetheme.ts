@@ -13,6 +13,7 @@ export const Colors: Record<string, string> = {
   foggyGray: "#C7CAAE",
   petiteOrchid: "#D79F98",
   title: "#473ef6",
+  footerbg: "#212529",
 };
 
 const baseTheme: Theme = createTheme({
