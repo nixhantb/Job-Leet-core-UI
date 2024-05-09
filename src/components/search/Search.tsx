@@ -35,7 +35,6 @@ const Search: FC = () => {
 
   const ButtonKey = "Find Jobs";
   return (
-    <>
       <SearchBarContainer>
         <SearchBar>
           {matches? <SearchKeywordsMobile
@@ -73,7 +72,6 @@ const Search: FC = () => {
           )}
         </SearchButton>
       </SearchBarContainer>
-    </>
   );
 };
 
