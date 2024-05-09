@@ -1,14 +1,9 @@
-import HeroContentSection from "./components/body/HeroContentSection";
-import Footer from "./components/footer/footer";
-import NavBar from "./components/navbar/NavBar";
+import { FC } from "react";
+import Homepage from "./pages/homepage";
 
-const App = () => {
+const App : FC = () => {
   return (
-    <>
-      <NavBar />
-      <HeroContentSection />
-      <Footer/>
-    </>
+    <Homepage/>
   );
 };
 
