@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import { navBarLabels } from "../../../config/data/home";
 import {
   ListItemButtonStyle,
@@ -13,7 +12,7 @@ import {
   textStyleListItemText,
 } from "../../styles/navbar/navbar.styles";
 import { ListItemButton, ListItemText } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 const NavBarDesktop: FC = () => {
   // customizable label names for navbar
   const {
@@ -27,10 +26,22 @@ const NavBarDesktop: FC = () => {
     navbar_signup,
   } = navBarLabels;
 
+  const navigate = useNavigate();
+  const handleClickRegister = () => {
+    navigate("/register");
+  };
+
+  const handleClickLogin = () => {
+    navigate("/login");
+  }
+
+  const handleHomeRedirection = () => {
+    navigate("/");
+  };
   return (
     <NavBarContainer>
       <NavBarTitle>
-        <ListItemButton>
+        <ListItemButton onClick={handleHomeRedirection}>
           <ListItemText
             primary={website_name}
             primaryTypographyProps={primaryTypographyHeaderStyle}
@@ -82,7 +93,7 @@ const NavBarDesktop: FC = () => {
       </NavBarItemsContainer>
 
       <NavBarItemsContainerLoginSignUp types="rows">
-        <ListItemButton>
+        <ListItemButton onClick={handleClickLogin}>
           <ListItemText
             primary={navbar_login}
             primaryTypographyProps={primaryTypographyStyle}
@@ -90,7 +101,7 @@ const NavBarDesktop: FC = () => {
           ></ListItemText>
         </ListItemButton>
 
-        <ListItemButton>
+        <ListItemButton onClick={handleClickRegister}>
           <ListItemText
             primary={navbar_signup}
             primaryTypographyProps={primaryTypographyStyleSignUp}

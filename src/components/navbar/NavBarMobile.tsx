@@ -19,7 +19,7 @@ import {
   IconButton,
   Drawer,
 } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 const NavBarMobile: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -29,6 +29,18 @@ const NavBarMobile: FC = () => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+  const navigate = useNavigate();
+
+  const handleClickRegister = () => {
+    navigate("/register");
+  };
+  const handleClickLogin = () => {
+    navigate("/login");
+  };
+  const handleHomeRedirection = () => {
+    navigate("/");
+  };
+
   const {
     website_name,
     navbar_company,
@@ -44,7 +56,7 @@ const NavBarMobile: FC = () => {
     <>
       <NavBarContainer>
         <NavBarTitle>
-          <ListItemButton>
+          <ListItemButton onClick={handleHomeRedirection}>
             <ListItemText
               primary={website_name}
               primaryTypographyProps={primaryTypographyHeaderStyleMobile}
@@ -111,7 +123,7 @@ const NavBarMobile: FC = () => {
           </NavBarItemsContainer>
 
           <NavBarItemsContainerLoginSignUp types="rows">
-            <ListItemButton>
+            <ListItemButton onClick={handleClickRegister}>
               <ListItemText
                 primary={navbar_login}
                 primaryTypographyProps={primaryTypographyStyle}
@@ -119,7 +131,7 @@ const NavBarMobile: FC = () => {
               ></ListItemText>
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={handleClickLogin}>
               <ListItemText
                 primary={navbar_signup}
                 primaryTypographyProps={primaryTypographyStyleSignUp}
