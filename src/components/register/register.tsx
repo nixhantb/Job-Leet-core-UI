@@ -70,7 +70,7 @@ export default function Register() {
               primary={website_name}
               primaryTypographyProps={{
                 ...primaryTypographyHeaderStyle,
-                fontSize: "33px",
+                fontSize: "33px"
               }}
               sx={textStyleListItemText}
             ></ListItemText>
@@ -82,7 +82,7 @@ export default function Register() {
               primary={navbar_login}
               primaryTypographyProps={{
                 ...primaryTypographyStyleSignUp,
-                fontSize: "1.4rem",
+                fontSize: "1.4rem",fontWeight: "600"
               }}
               sx={textStyleListItemText}
             ></ListItemText>

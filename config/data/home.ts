@@ -7,8 +7,8 @@ const navBarLabels = {
   navbar_company: "company",
   navbar_salaries: "Salaries",
   navbar_resume: "Resume templates",
-  navbar_login: "Login",
-  navbar_signup: "Signup",
+  navbar_login: "Log in",
+  navbar_signup: "Sign up",
 };
 
 const HeroBodyLabels = {

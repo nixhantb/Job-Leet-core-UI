@@ -83,7 +83,7 @@ export default function Login() {
               primary={navbar_signup}
               primaryTypographyProps={{
                 ...primaryTypographyStyleSignUp,
-                fontSize: "1.4rem",
+                fontSize: "1.4rem",fontWeight: '600'
               }}
               sx={textStyleListItemText}
             ></ListItemText>
