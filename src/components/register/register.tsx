@@ -177,7 +177,7 @@ export default function Register() {
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="/login" variant="body2">
+                  <Link href="https://job-leet-core-ui.vercel.app/login" variant="body2">
                     Already have an account? Sign in
                   </Link>
                 </Grid>
