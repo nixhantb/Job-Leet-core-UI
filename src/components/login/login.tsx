@@ -24,6 +24,7 @@ import {
 } from "../../styles/navbar/navbar.styles";
 import { ListItemButton, ListItemText } from "@mui/material";
 import { navBarLabels } from "../../../config/data/home";
+import Divider from '@mui/material/Divider';
 function Copyright(props: any) {
   return (
     <Typography
@@ -90,6 +91,7 @@ export default function Login() {
           </ListItemButton>
         </NavBarItemsContainerLoginSignUp>
       </NavBarContainer>
+      <Divider orientation="horizontal" flexItem />
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />

@@ -24,6 +24,7 @@ import {
 } from "../../styles/navbar/navbar.styles";
 import { useNavigate } from "react-router-dom";
 import { navBarLabels } from "../../../config/data/home";
+import Divider from '@mui/material/Divider';
 function Copyright(props: any) {
   return (
     <Typography
@@ -88,7 +89,9 @@ export default function Register() {
             ></ListItemText>
           </ListItemButton>
         </NavBarItemsContainerLoginSignUp>
+       
       </NavBarContainer>
+      <Divider orientation="horizontal" flexItem />
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
