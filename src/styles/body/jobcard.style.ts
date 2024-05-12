@@ -13,6 +13,9 @@ export const JobCardDefaultContainer = styled(Box)(({theme}) => ({
     width: '75%',
     [theme.breakpoints.down("md")]:{
         width: "80%"
+    },
+    [theme.breakpoints.down("sm")]: {
+        width: '100%'
     }
 
 }))
