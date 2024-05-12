@@ -10,7 +10,7 @@ export const JobCardDefaultContainer = styled(Box)(({theme}) => ({
     alignItems: 'center',
     flexWrap: 'wrap',
     margin: 'auto',
-    width: '75%',
+    width: '80%',
     [theme.breakpoints.down("md")]:{
         width: "80%"
     },

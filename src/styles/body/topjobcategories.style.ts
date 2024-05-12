@@ -9,7 +9,7 @@ export const JobCategoriesContainer = styled(Box)(() => ({
   flexDirection: "column",
   alignItems: "center",
   marginTop: "8em",
-  height: "auto",
+  height: "auto"
 }));
 
 export const CategoryHeader = styled(Typography)(({ theme }) => ({
@@ -36,18 +36,20 @@ export const JobCategory = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     width: "100%",
   },
+  [theme.breakpoints.down("sm")]: {
+    width: '100%'
+  }
 }));
 
 export const IndividualSubContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
   border: `1px solid ${Colors.pampas}`,
-  width: "calc((100% - 20em) / 4)",
   height: "auto",
   padding: "2em",
-  margin: "2em",
+  margin: "1em 2em",
   transition: "box-shadow 0.6s, border-color 0.6s",
   "&:hover": {
     borderColor: Colors.pampas,
@@ -55,7 +57,7 @@ export const IndividualSubContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("md")]: {
     width: "80%",
-  },
+  }
 }));
 
 export const CategoryBoxStyle = {
