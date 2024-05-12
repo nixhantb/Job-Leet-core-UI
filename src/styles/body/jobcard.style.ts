@@ -6,13 +6,14 @@ import { Colors } from "../basetheme/basetheme";
 
 export const JobCardDefaultContainer = styled(Box)(({theme}) => ({
     display: 'flex',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     flexWrap: 'wrap',
     margin: 'auto',
-    width: '80%',
+    width: '90%',
+    marginRight: '3em',
     [theme.breakpoints.down("md")]:{
-        width: "80%"
+        width: "100%"
     },
     [theme.breakpoints.down("sm")]: {
         width: '100%'
@@ -24,7 +25,7 @@ export const JobCardContainer = styled(Box)(({theme}) => ({
     padding: '1.1em',
     background: '#ecf4fc',
     borderRadius: '10px',
-    width: '18em',
+    width: '22em',
     margin: '1em 1em',
     [theme.breakpoints.down("md")]: {
         width: '100%'
@@ -165,7 +166,7 @@ export const JobCardApply = styled(Box)`
     padding: 1em 3em;
     border: none;
     border-radius: 4px;
-    margin: 0.5em 0;
+    margin-top: 0.7em;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 

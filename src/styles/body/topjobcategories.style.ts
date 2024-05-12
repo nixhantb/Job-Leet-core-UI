@@ -8,7 +8,7 @@ export const JobCategoriesContainer = styled(Box)(() => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  marginTop: "8em",
+  marginTop: "7em",
   height: "auto"
 }));
 

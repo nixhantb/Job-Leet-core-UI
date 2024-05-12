@@ -29,6 +29,8 @@ import AddLocationIcon from "@mui/icons-material/AddLocation";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { FC } from "react";
+import { Typography } from "@mui/material";
+import { PrimaryDescriptionInsideBox } from "../../styles/body/topjobcategories.style";
 interface JobCardItemProps {
   companyName: string;
   location: string;
@@ -63,7 +65,8 @@ const JobCardItem: FC<JobCardItemProps> = ({
   keySkills,
 }) => {
   return (
-    <JobCardContainer>
+    <>
+     <JobCardContainer>
       <JobCardCompanyLogoName>
         <JobCardCompanyLogoPlaceHolder src={image} />
         <JobCardCompanyNameLocation>
@@ -97,12 +100,19 @@ const JobCardItem: FC<JobCardItemProps> = ({
         </JobCardApply>
       </JobCardPayPerHourWithApplyButtonContainer>
     </JobCardContainer>
+    </>
+   
   );
 };
 
 const JobCard: FC = () => {
   return (
-    <JobCardDefaultContainer>
+    <>
+     <PrimaryDescriptionInsideBox sx={{color: "#5e6163" , fontSize: '2em'}}>Featured Jobs
+     <Typography sx = {{marginTop: '0.5em', fontSize: '16px'}} color="#a0abb8">Recognize your value and seek a job that enhances your quality of life.</Typography>
+     </PrimaryDescriptionInsideBox>
+     
+     <JobCardDefaultContainer>
       {companies.map((company, index) => (
         <JobCardItem
           key={index}
@@ -117,6 +127,8 @@ const JobCard: FC = () => {
         />
       ))}
     </JobCardDefaultContainer>
+    </>
+    
   );
 };
 
@@ -168,6 +180,17 @@ const companies = [
     keySkills: ["Swift", "Objective-C", "Xcode"],
   },
   {
+    name: "Microsoft",
+    location: "New York, US",
+    jobTitle: "Lead Software Engineer",
+    description:
+      "Be a part of Microsoft's dynamic frontend development team, building next-generation web applications and platforms.",
+    postedTime: "8 minutes",
+    jobType: "Full Time",
+    image: MicrosoftLogo,
+    keySkills: ["React", "TypeScript", "C#"],
+  },
+  {
     name: "Facebook",
     location: "Menlo Park, US",
     jobTitle: "Data Scientist",
@@ -188,5 +211,16 @@ const companies = [
     jobType: "Contract",
     image: TeslaLogo,
     keySkills: ["CAD", "Simulation", "Testing"],
+  },
+  {
+    name: "Facebook",
+    location: "Menlo Park, US",
+    jobTitle: "Software Engineer II",
+    description:
+      "Facebook is looking for talented Software Engineer II to contribute to the development of cutting-edge automotive technologies.",
+    postedTime: "20 minutes",
+    jobType: "Full Time",
+    image: FacebookLogo,
+    keySkills: ["ML", "Python", "SQL"],
   },
 ];

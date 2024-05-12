@@ -29,9 +29,8 @@ const HeroContentSection: FC = () => {
       <HeroContainerSearch>
         <Search />
       </HeroContainerSearch>
-
-      <TopJobCategories />
       <JobCard />
+      <TopJobCategories />
     </>
   );
 };
