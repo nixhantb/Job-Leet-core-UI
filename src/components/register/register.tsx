@@ -25,6 +25,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { navBarLabels } from "../../../config/data/home";
 import Divider from '@mui/material/Divider';
+import axios from "axios";
+
 function Copyright(props: any) {
   return (
     <Typography
@@ -45,17 +47,47 @@ function Copyright(props: any) {
 
 const defaultTheme = createTheme();
 const { website_name, navbar_login } = navBarLabels;
-export default function Register() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
-  const navigate = useNavigate();
 
+export default function Register() {
+  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = React.useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = new FormData(event.currentTarget);
+    // prepare the payload
+    const userName = `${data.get("firstName")} ${data.get("lastName")}`;
+
+    const userInformationPayload = {
+      userName, 
+      userEmail : {
+          emailAddress: data.get("email"), 
+      },
+      password: data.get("password"),
+      confirmPassword: data.get("confirm-password"),
+    }
+     
+
+    try {
+      const RegisterUserResponse = await axios.post("http://localhost:8080/api/v1/RegisterUser", userInformationPayload);
+      
+      if(RegisterUserResponse.status == 200){
+        setSuccessMessage("Registration successful! Redirecting to login page...");
+
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+      }
+    }
+    catch(error){
+      console.error("There was an error registering the user!", error);
+      setSuccessMessage("Registration failed! Please try again.");
+    }
+  };
+ 
+
+ 
   const handleClickLogin = () => {
     navigate("/login");
   };
@@ -162,6 +194,17 @@ export default function Register() {
                   />
                 </Grid>
                 <Grid item xs={12}>
+                  <TextField
+                    required
+                    fullWidth
+                    name="confirm-password"
+                    label="Confirm Password"
+                    type="password"
+                    id="confirm-password"
+                    autoComplete="new-password"
+                  />
+                </Grid>
+                <Grid item xs={12}>
                   <FormControlLabel
                     control={
                       <Checkbox value="allowExtraEmails" color="primary" />
@@ -170,6 +213,9 @@ export default function Register() {
                   />
                 </Grid>
               </Grid>
+              {successMessage && (
+                <Typography color={Colors.jungleGreen} sx={{mt: 2}}>{successMessage}</Typography>
+              )}
               <Button
                 type="submit"
                 fullWidth
