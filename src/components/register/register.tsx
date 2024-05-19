@@ -77,7 +77,7 @@ export default function Register() {
 
         setTimeout(() => {
           navigate("/login");
-        }, 2000);
+        }, 1000);
       }
     }
     catch(error){
