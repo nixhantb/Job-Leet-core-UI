@@ -9,6 +9,9 @@ const navBarLabels = {
   navbar_resume: "Resume templates",
   navbar_login: "Log in",
   navbar_signup: "Sign up",
+  navbar_logout: "Log out",
+  navbar_dashboard: "Dashboard",
+  navbar_employers: "Post Job"
 };
 
 const HeroBodyLabels = {

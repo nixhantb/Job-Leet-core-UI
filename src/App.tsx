@@ -3,15 +3,24 @@ import Homepage from "./pages/homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./components/register/register";
 import Login from "./components/login/login";
+import { AuthProvider } from "./contexts/AuthContext";
+import Dashboard from "./components/dashboard/dashboard";
+import ProtectedRoute from "./contexts/ProtectedRoute";
 const App: FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+        </Routes>
+      </Router>
+    </AuthProvider>
+
   );
 };
 

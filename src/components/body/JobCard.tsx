@@ -31,6 +31,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { FC } from "react";
 import { Typography } from "@mui/material";
 import { PrimaryDescriptionInsideBox } from "../../styles/body/topjobcategories.style";
+
 interface JobCardItemProps {
   companyName: string;
   location: string;
