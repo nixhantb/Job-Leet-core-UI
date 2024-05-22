@@ -14,6 +14,7 @@ export const Colors: Record<string, string> = {
   petiteOrchid: "#D79F98",
   title: "#473ef6",
   footerbg: "#212529",
+  dashboardText: "#6e7877"
 };
 
 const baseTheme: Theme = createTheme({
