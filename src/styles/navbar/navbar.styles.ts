@@ -19,8 +19,29 @@ export const NavBarContainer = styled(Box)(() => ({
   zIndex: 1000,
 }));
 
-export const NavBarTitle = styled(Typography)(() => ({}));
+export const NavBarTitle = styled(Typography)(() => ({
 
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+}));
+
+export const NavBarIcon = styled("img")(({ src, theme }) => ({
+  src: `url(${src})`,
+  width: "3em",
+  height: "3em",
+  margin: "0 2em",
+  [theme.breakpoints.down("md")]: {
+    width: "2em",
+    height: "2em",
+    margin: "0 1.5em"
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "2em",
+    height: "2em",
+    margin: "0 1.5em"
+  },
+}));
 export const NavBarItemsContainer = styled(List)<NavBarItemsProps>((props) => ({
   display: props.types === "rows" ? "flex" : "block",
   justifyContent: "center",
@@ -67,6 +88,11 @@ export const primaryTypographyHeaderStyle = {
   color: Colors.jungleGreen,
 };
 
+export const primaryTypographyDashboardStyle = {
+  fontSize: "1.1em",
+  fontWeight: "600",
+  color: Colors.dashboardText
+};
 export const primaryTypographyStyle = {
   fontSize: "15px",
   fontFamily: "'Montserrat Variable', 'sans-serif'",
