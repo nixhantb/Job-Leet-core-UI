@@ -51,7 +51,9 @@ const { website_name, navbar_login } = navBarLabels;
 export default function Register() {
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = React.useState("");
-
+  const [userLoggedIn, setUserLoggedIn] = React.useState(false);
+  const timeout = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+  
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -73,11 +75,10 @@ export default function Register() {
       const RegisterUserResponse = await axios.post("http://localhost:8080/api/v1/RegisterUser", userInformationPayload);
       
       if(RegisterUserResponse.status == 200){
+        setUserLoggedIn(true);
         setSuccessMessage("Registration successful! Redirecting to login page...");
-
-        setTimeout(() => {
-          navigate("/login");
-        }, 1000);
+        timeout(1000);
+        navigate("/login");
       }
     }
     catch(error){
@@ -213,8 +214,10 @@ export default function Register() {
                   />
                 </Grid>
               </Grid>
-              {successMessage && (
-                <Typography color={Colors.jungleGreen} sx={{mt: 2}}>{successMessage}</Typography>
+              {successMessage && userLoggedIn ? (
+                <Typography color={Colors.jungleGreen} sx={{ mt: 2 }}>{successMessage}</Typography>
+              ) : (
+                <Typography color={Colors.cardinal} sx={{ mt: 2 }}>{successMessage}</Typography>
               )}
               <Button
                 type="submit"

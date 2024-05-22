@@ -25,6 +25,9 @@ import {
 import { ListItemButton, ListItemText } from "@mui/material";
 import { navBarLabels } from "../../../config/data/home";
 import Divider from '@mui/material/Divider';
+import axios from "axios";
+import { useAuth } from "../../contexts/AuthContext";
+
 function Copyright(props: any) {
   return (
     <Typography
@@ -42,23 +45,49 @@ function Copyright(props: any) {
     </Typography>
   );
 }
+
 const defaultTheme = createTheme();
 const { website_name, navbar_signup } = navBarLabels;
 
 export default function Login() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
+  const [successMessage, setSuccessMessage] = React.useState("");
+  const [userLoggedIn, setUserLoggedIn] = React.useState(false);
+
+  const timeout = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    const userLoginPayload = {
+      emailAddress: data.get("email"),
+      password: data.get("password")
+    }
+
+    try {
+      const LoginUserResponse = await axios.post("http://localhost:8080/api/v1/LoginUser", userLoginPayload);
+
+      if (LoginUserResponse.status === 200) {
+        setUser(LoginUserResponse.data);
+        setUserLoggedIn(true);
+        setSuccessMessage("Login successful! Redirecting to dashboard...");
+        await timeout(1000);
+        navigate("/dashboard");
+      }
+  
+    } catch (error) {
+      console.error("There was an error logging in the user!", error);
+      setSuccessMessage("Login failed! Please check username, password, or your network.");
+    }
   };
-  const navigate = useNavigate();
 
   const handleClickRegister = () => {
     navigate("/register");
   };
+
   const handleHomeRedirection = () => {
     navigate("/");
   };
@@ -75,7 +104,7 @@ export default function Login() {
                 fontSize: "33px",
               }}
               sx={textStyleListItemText}
-            ></ListItemText>
+            />
           </ListItemButton>
         </NavBarTitle>
         <NavBarItemsContainerLoginSignUp types="rows">
@@ -84,10 +113,11 @@ export default function Login() {
               primary={navbar_signup}
               primaryTypographyProps={{
                 ...primaryTypographyStyleSignUp,
-                fontSize: "1.4rem",fontWeight: '600'
+                fontSize: "1.4rem",
+                fontWeight: '600'
               }}
               sx={textStyleListItemText}
-            ></ListItemText>
+            />
           </ListItemButton>
         </NavBarItemsContainerLoginSignUp>
       </NavBarContainer>
@@ -139,6 +169,11 @@ export default function Login() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
               />
+              {successMessage && userLoggedIn ? (
+                <Typography color={Colors.jungleGreen} sx={{ mt: 2 }}>{successMessage}</Typography>
+              ) : (
+                <Typography color={Colors.cardinal} sx={{ mt: 2 }}>{successMessage}</Typography>
+              )}
               <Button
                 type="submit"
                 fullWidth
