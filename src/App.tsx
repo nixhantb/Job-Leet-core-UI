@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./components/register/register";
 import Login from "./components/login/login";
 import { AuthProvider } from "./contexts/AuthContext";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./pages/dashboard/dashboard";
 import ProtectedRoute from "./contexts/ProtectedRoute";
 const App: FC = () => {
   return (

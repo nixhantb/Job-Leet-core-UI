@@ -1,10 +1,10 @@
 // src/components/dashboard/dashboard.tsx
 
 import React from 'react';
-import NavBar from '../navbar/NavBar';
+import NavBar from '../../components/navbar/NavBar';
 import Divider from '@mui/material/Divider';
-import HeroContentSection from '../body/HeroContentSection';
-import Footer from '../footer/footer';
+import HeroContentSection from '../../components/body/HeroContentSection';
+import Footer from '../../components/footer/footer';
 const Dashboard: React.FC = () => {
 
   return (
