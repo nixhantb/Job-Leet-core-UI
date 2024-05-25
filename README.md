@@ -40,4 +40,4 @@ We welcome contributions to make Job Leet even better! If you'd like to contribu
 ### License
 This project is licensed under the [MIT](LICENSE)
 
-Happy coding! 🚀
+Happy coding! 
