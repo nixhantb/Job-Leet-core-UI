@@ -77,7 +77,7 @@ export default function Login() {
         await timeout(1000);
         navigate("/dashboard");
       }
-  
+      
     } catch (error) {
       console.error("There was an error logging in the user!", error);
       setSuccessMessage("Login failed! Please check username, password, or your network.");

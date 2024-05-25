@@ -27,6 +27,10 @@ Make sure you have Node.js and npm installed on your machine.
 - Start the development server:
     ```npm run dev```
 
+### After Login
+
+![Logged In Preview](/src/assets/images/dashboard.png)
+
 ### Issues
 If you encounter any issues or have suggestions, feel free to open an issue [here](https://github.com/Nix-code/Job-Leet-core-UI/issues)
 
