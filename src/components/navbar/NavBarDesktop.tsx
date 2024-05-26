@@ -58,25 +58,27 @@ const NavBarDesktop: FC = () => {
   };
   return (
     <NavBarContainer>
-      <NavBarTitle>
+     <NavBarTitle>
+  {user ? (
+    <ListItemButton onClick={handleHomeRedirection}>
+      <NavBarIcon src={NavIcon} />
+      <ListItemText
+        primary={navbar_dashboard}
+        primaryTypographyProps={primaryTypographyDashboardStyle}
+        sx={textStyleListItemText}
+      />
+    </ListItemButton>
+  ) : (
+    <ListItemButton onClick={handleHomeRedirection}>
+      <ListItemText
+        primary={website_name}
+        primaryTypographyProps={primaryTypographyHeaderStyle}
+        sx={textStyleListItemText}
+      />
+    </ListItemButton>
+  )}
+</NavBarTitle>
 
-        {user? <NavBarIcon src={NavIcon}/>
-        : 
-        <ListItemButton onClick={handleHomeRedirection}>
-        <ListItemText
-          primary={website_name}
-          primaryTypographyProps={primaryTypographyHeaderStyle}
-          sx={textStyleListItemText}
-        ></ListItemText>
-      </ListItemButton>
-        }
-        
-          <ListItemText
-            primary={navbar_dashboard}
-            primaryTypographyProps={primaryTypographyDashboardStyle}
-            sx={textStyleListItemText}
-          ></ListItemText>
-      </NavBarTitle>
 
       <NavBarItemsContainer types="rows">
         {user ? <ListItemButton sx={ListItemButtonStyle}>
@@ -85,16 +87,16 @@ const NavBarDesktop: FC = () => {
             primaryTypographyProps={primaryTypographyStyle}
             sx={textStyleListItemText}
           ></ListItemText>
-        </ListItemButton> : 
-         <ListItemButton sx={ListItemButtonStyle}>
-         <ListItemText
-           primary={navbar_home}
-           primaryTypographyProps={primaryTypographyStyle}
-           sx={textStyleListItemText}
-         ></ListItemText>
-       </ListItemButton>
+        </ListItemButton> :
+          <ListItemButton sx={ListItemButtonStyle}>
+            <ListItemText
+              primary={navbar_home}
+              primaryTypographyProps={primaryTypographyStyle}
+              sx={textStyleListItemText}
+            ></ListItemText>
+          </ListItemButton>
         }
-       
+
         <ListItemButton sx={ListItemButtonStyle}>
           <ListItemText
             primary={navbar_company}
@@ -128,21 +130,21 @@ const NavBarDesktop: FC = () => {
         </ListItemButton>
       </NavBarItemsContainer>
       {user ? <NavBarItemsContainerLoginSignUp types="rows">
-        
-      <IconButton aria-label="menu-icon">
+
+        <IconButton aria-label="menu-icon">
           <FavoriteIcon sx={{ fontSize: "1.2em" }} />
         </IconButton>
         <IconButton aria-label="menu-icon">
           <SaveAltIcon sx={{ fontSize: "1.2em" }} />
         </IconButton>
-      <IconButton aria-label="menu-icon">
+        <IconButton aria-label="menu-icon">
           <NotificationsIcon sx={{ fontSize: "1.2em" }} />
         </IconButton>
 
         <IconButton aria-label="menu-icon">
           <AccountCircleIcon sx={{ fontSize: "1.2em" }} />
         </IconButton>
-        
+
         <ListItemButton onClick={handleLogout}>
           <ListItemText
             primary={navbar_logout}
