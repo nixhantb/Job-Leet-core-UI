@@ -16,11 +16,12 @@ import {
 import { IconButton, ListItemButton, ListItemText } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NavIcon from "../../../public/JobLeet_logo.svg";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import AccountMenu from "../users/AccountMenu";
+
 
 const NavBarDesktop: FC = () => {
   // customizable label names for navbar
@@ -142,7 +143,7 @@ const NavBarDesktop: FC = () => {
         </IconButton>
 
         <IconButton aria-label="menu-icon">
-          <AccountCircleIcon sx={{ fontSize: "1.2em" }} />
+          <AccountMenu/>
         </IconButton>
 
         <ListItemButton onClick={handleLogout}>
