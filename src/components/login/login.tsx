@@ -68,7 +68,7 @@ export default function Login() {
     }
 
     try {
-      const LoginUserResponse = await axios.post("http://localhost:8080/api/v1/LoginUser", userLoginPayload);
+      const LoginUserResponse = await axios.post("http://localhost:5184/api/v1/logins", userLoginPayload);
 
       if (LoginUserResponse.status === 200) {
         setUser(LoginUserResponse.data);

@@ -58,21 +58,23 @@ export default function Register() {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
-    // prepare the payload
-    const userName = `${data.get("firstName")} ${data.get("lastName")}`;
+    const personName = {
+      firstName: data.get("firstName"),
+      middleName: data.get("middleName"),
+      lastName: data.get("lastName"),
+    };
 
     const userInformationPayload = {
-      userName, 
+      personName : personName,
       userEmail : {
           emailAddress: data.get("email"), 
       },
       password: data.get("password"),
       confirmPassword: data.get("confirm-password"),
     }
-     
 
     try {
-      const RegisterUserResponse = await axios.post("http://localhost:8080/api/v1/RegisterUser", userInformationPayload);
+      const RegisterUserResponse = await axios.post("http://localhost:5184/api/v1/RegisterUser", userInformationPayload);
       
       if(RegisterUserResponse.status == 200){
         setUserLoggedIn(true);
