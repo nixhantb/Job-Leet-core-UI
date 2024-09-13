@@ -68,6 +68,36 @@ export default function Login() {
     }
 
     try {
+
+      if (
+        userLoginPayload.emailAddress === "guest@domain.com" &&
+        userLoginPayload.password === "guest"
+      ) {
+        const guestUser = {
+          emailAddress: "guest@guest.com",
+          personName: {
+            firstName: "Guest",
+            middleName: null,
+            lastName: "User",
+            id: 0
+          },
+          accountStatus: 1,
+          accountCreated: true,
+          loginTime: new Date().getTime,
+          role: "Guest",
+          id: 0
+        }
+        
+        
+        setUser(guestUser);
+        setUserLoggedIn(true);
+        setSuccessMessage("Guest login successful! Redirecting to dashboard...");
+       
+        await timeout(1000);
+       
+        navigate("/dashboard");
+        return;
+      }
       const LoginUserResponse = await axios.post("http://localhost:5184/api/v1/logins", userLoginPayload);
 
       if (LoginUserResponse.status === 200) {
@@ -77,6 +107,7 @@ export default function Login() {
         await timeout(1000);
         navigate("/dashboard");
       }
+
       
     } catch (error) {
       console.error("There was an error logging in the user!", error);
