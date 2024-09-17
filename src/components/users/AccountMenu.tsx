@@ -14,7 +14,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function AccountMenu() {
-  const { user } = useAuth();
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -25,10 +25,16 @@ export default function AccountMenu() {
   };
 
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   const handleMyAccountClick = () => {
     handleClose();
     navigate('/account');
+  }
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
   }
   const userInitial = user?.personName?.firstName.charAt(0).toUpperCase() || '';
   return (
@@ -103,7 +109,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

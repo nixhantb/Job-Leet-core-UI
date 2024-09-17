@@ -19,24 +19,33 @@ import {
   IconButton,
   Drawer,
 } from "@mui/material";
+
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import AccountMenu from "../users/AccountMenu";
+
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+
 const NavBarMobile: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(true);
+    setMenuOpen(!menuOpen);
   };
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+
   const navigate = useNavigate();
+  const { user} = useAuth();
 
   const handleClickRegister = () => {
     navigate("/register");
   };
+
   const handleClickLogin = () => {
     navigate("/login");
   };
+
   const handleHomeRedirection = () => {
     navigate("/");
   };
@@ -50,6 +59,7 @@ const NavBarMobile: FC = () => {
     navbar_resume,
     navbar_login,
     navbar_signup,
+    navbar_dashboard
   } = navBarLabels;
 
   return (
@@ -57,13 +67,24 @@ const NavBarMobile: FC = () => {
       <NavBarContainer>
         <NavBarTitle>
           <ListItemButton onClick={handleHomeRedirection}>
-            <ListItemText
-              primary={website_name}
-              primaryTypographyProps={primaryTypographyHeaderStyleMobile}
-              sx={textStyleListItemText}
-            ></ListItemText>
+            {user ? (
+              <>
+                <ListItemText
+                  primary={navbar_dashboard}
+                  primaryTypographyProps={primaryTypographyHeaderStyleMobile}
+                  sx={textStyleListItemText}
+                />
+              </>
+            ) : (
+              <ListItemText
+                primary={website_name}
+                primaryTypographyProps={primaryTypographyHeaderStyleMobile}
+                sx={textStyleListItemText}
+              />
+            )}
           </ListItemButton>
         </NavBarTitle>
+
         <IconButton aria-label="menu-icon" onClick={toggleMenu}>
           <MenuOpenIcon sx={{ fontSize: "1.3em" }} />
         </IconButton>
@@ -71,7 +92,7 @@ const NavBarMobile: FC = () => {
         <Drawer anchor="top" open={menuOpen} onClose={toggleMenu}>
           <IconButton
             aria-label="close-menu-icon"
-            onClick={closeMenu}
+            onClick={toggleMenu}
             sx={{
               "&:hover": {
                 background: "transparent",
@@ -80,6 +101,7 @@ const NavBarMobile: FC = () => {
           >
             <CloseIcon sx={{ fontSize: "2em" }} />
           </IconButton>
+
           <NavBarItemsContainer types="block">
             <ListItemButton sx={ListItemButtonStyle}>
               <ListItemText
@@ -122,23 +144,39 @@ const NavBarMobile: FC = () => {
             </ListItemButton>
           </NavBarItemsContainer>
 
-          <NavBarItemsContainerLoginSignUp types="rows">
-            <ListItemButton onClick={handleClickRegister}>
-              <ListItemText
-                primary={navbar_login}
-                primaryTypographyProps={primaryTypographyStyle}
-                sx={textStyleListItemText}
-              ></ListItemText>
-            </ListItemButton>
+          {user ? (
+            <NavBarItemsContainerLoginSignUp types="rows">
+              <IconButton aria-label="favorite-icon">
+                <FavoriteIcon sx={{ fontSize: "1.2em" }} />
+              </IconButton>
+              <IconButton aria-label="save-icon">
+                <SaveAltIcon sx={{ fontSize: "1.2em" }} />
+              </IconButton>
+              <IconButton aria-label="notifications-icon">
+                <NotificationsIcon sx={{ fontSize: "1.2em" }} />
+              </IconButton>
+              <AccountMenu />
+              
+            </NavBarItemsContainerLoginSignUp>
+          ) : (
+            <NavBarItemsContainerLoginSignUp types="rows">
+              <ListItemButton onClick={handleClickLogin}>
+                <ListItemText
+                  primary={navbar_login}
+                  primaryTypographyProps={primaryTypographyStyle}
+                  sx={textStyleListItemText}
+                ></ListItemText>
+              </ListItemButton>
 
-            <ListItemButton onClick={handleClickLogin}>
-              <ListItemText
-                primary={navbar_signup}
-                primaryTypographyProps={primaryTypographyStyleSignUp}
-                sx={textStyleListItemText}
-              ></ListItemText>
-            </ListItemButton>
-          </NavBarItemsContainerLoginSignUp>
+              <ListItemButton onClick={handleClickRegister}>
+                <ListItemText
+                  primary={navbar_signup}
+                  primaryTypographyProps={primaryTypographyStyleSignUp}
+                  sx={textStyleListItemText}
+                ></ListItemText>
+              </ListItemButton>
+            </NavBarItemsContainerLoginSignUp>
+          )}
         </Drawer>
       </NavBarContainer>
     </>
