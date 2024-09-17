@@ -1,18 +1,21 @@
-
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm} from "react-hook-form";
 import { Box, FormHelperText } from "@mui/material";
 
+// Define the shape of your form data
+interface FormData {
+  phone: string;
+}
 
-  
 const PhoneExt = () => {
-  const { control, formState: { errors } } = useForm({
+  const {
+    control,
+    formState: { errors },
+  } = useForm<FormData>({
     defaultValues: {
       phone: "",
     },
   });
-
- 
 
   return (
     <form>
@@ -22,7 +25,7 @@ const PhoneExt = () => {
         rules={{
           required: "Phone number is required",
           validate: {
-            validPhoneNumber: (value) => {
+            validPhoneNumber: (value: string) => {
               if (!matchIsValidTel(value)) {
                 return "Invalid phone number";
               }
@@ -36,9 +39,8 @@ const PhoneExt = () => {
               {...field}
               defaultCountry="US"
               error={Boolean(errors.phone)}
-              helperText={errors.phone?.message}
               fullWidth
-              label = "Phone Number"
+              label="Phone Number"
             />
             {errors.phone && (
               <FormHelperText error>{errors.phone.message}</FormHelperText>
