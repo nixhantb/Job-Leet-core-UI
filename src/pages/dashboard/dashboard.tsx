@@ -5,7 +5,6 @@ import NavBar from '../../components/navbar/NavBar';
 import Divider from '@mui/material/Divider';
 import HeroContentSection from '../../components/body/HeroContentSection';
 import Footer from '../../components/footer/footer';
-import CalendarHelper from '../../components/calendar/CalendarHelper';
 const Dashboard: React.FC = () => {
 
   return (

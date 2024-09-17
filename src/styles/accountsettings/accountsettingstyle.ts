@@ -22,7 +22,7 @@ export const AccountSettingContainer = styled(Box)(({ theme }) => ({
 }));
  
 
-  export const AccountBasicInfoTitle = styled(Typography)(({theme}) => ({
+  export const AccountBasicInfoTitle = styled(Typography)(() => ({
     fontSize: "1em",
     fontWeight: "600",
     lineHeight: "1.3",
