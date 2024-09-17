@@ -11,6 +11,7 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function AccountMenu() {
   const { user } = useAuth();
@@ -22,6 +23,13 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const navigate = useNavigate();
+
+  const handleMyAccountClick = () => {
+    handleClose();
+    navigate('/account');
+  }
   const userInitial = user?.personName?.firstName.charAt(0).toUpperCase() || '';
   return (
     <React.Fragment>
@@ -79,7 +87,7 @@ export default function AccountMenu() {
         <MenuItem onClick={handleClose}>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleMyAccountClick}>
           <Avatar /> My account
         </MenuItem>
         <Divider />

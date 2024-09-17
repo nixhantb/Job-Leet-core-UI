@@ -74,7 +74,7 @@ export default function Login() {
         userLoginPayload.password === "guest"
       ) {
         const guestUser = {
-          emailAddress: "guest@guest.com",
+          emailAddress: "guest@domain.com",
           personName: {
             firstName: "Guest",
             middleName: null,

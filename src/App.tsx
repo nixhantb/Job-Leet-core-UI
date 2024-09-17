@@ -6,6 +6,7 @@ import Login from "./components/login/login";
 import { AuthProvider } from "./contexts/AuthContext";
 import Dashboard from "./pages/dashboard/dashboard";
 import ProtectedRoute from "./contexts/ProtectedRoute";
+import AccountSetting from "./pages/dashboard/AccountSetting";
 const App: FC = () => {
   return (
     <AuthProvider>
@@ -14,8 +15,10 @@ const App: FC = () => {
           <Route path="/" element={<Homepage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="account" element = {<AccountSetting/>}></Route>
           </Route>
         </Routes>
       </Router>

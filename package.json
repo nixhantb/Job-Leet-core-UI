@@ -10,14 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource-variable/open-sans": "^5.0.28",
     "@fontsource/poppins": "^5.0.8",
     "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
+    "@mui/material": "^5.16.7",
+    "@mui/x-date-pickers": "^7.17.0",
     "axios": "^1.6.8",
+    "dayjs": "^1.11.13",
+    "mui-tel-input": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0"
