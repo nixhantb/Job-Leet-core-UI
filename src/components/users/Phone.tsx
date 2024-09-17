@@ -3,19 +3,19 @@ import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import { Controller, useForm } from "react-hook-form";
 import { Box, FormHelperText } from "@mui/material";
 
+
+  
 const PhoneExt = () => {
-  const { control, handleSubmit, formState: { errors } } = useForm({
+  const { control, formState: { errors } } = useForm({
     defaultValues: {
       phone: "",
     },
   });
 
-  const onSubmit = (data: any) => {
-    alert(JSON.stringify(data));
-  };
+ 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form>
       <Controller
         name="phone"
         control={control}
