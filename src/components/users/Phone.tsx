@@ -2,7 +2,7 @@ import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import { Controller, useForm} from "react-hook-form";
 import { Box, FormHelperText } from "@mui/material";
 
-// Define the shape of your form data
+
 interface FormData {
   phone: string;
 }
