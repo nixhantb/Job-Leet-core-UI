@@ -1,4 +1,4 @@
-import { Box, TextField, Divider, Button } from "@mui/material";
+import { Box, TextField, Divider, Button, Grid } from "@mui/material";
 import { useAuth } from "../../contexts/AuthContext";
 import NavBar from "../../components/navbar/NavBar";
 import {
@@ -20,235 +20,276 @@ const AccountSetting = () => {
       <AccountSettingContainer>
         <Box
           component="form"
-          sx={{ "& .MuiTextField-root": { m: 1, width: "20ch" } }}
+          sx={{ m: 2 }}
           noValidate
           autoComplete="off"
         >
-          {/* Basic Information */}
-          <AccountSettingTitle>
-            Hi, {user?.personName?.firstName}
-          </AccountSettingTitle>
-          <AccountBasicInfoTitle>Basic Information</AccountBasicInfoTitle>
-          <TextField
-            label="First Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={user?.personName?.firstName || ""}
-          />
-          <TextField
-            label="Middle Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={user?.personName?.middleName || ""}
-          />
-          <TextField
-            label="Last Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={user?.personName?.lastName || ""}
-          />
-          <TextField
-            label="Email Address"
-            disabled
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={user?.emailAddress || ""}
-          />
-          <CalendarHelper/>
-          <PhoneExt/>
-         
-            
-          {/* Profile Summary */}
-          <AccountBasicInfoTitle>Summary</AccountBasicInfoTitle>
-          <TextField
-            label="Profile Summary"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            multiline
-            rows={4} 
-            sx={{ width: '100%' }} 
-          />
+          <Grid container spacing={2}>
+            {/* Basic Information */}
+            <Grid item xs={12}>
+              <AccountSettingTitle>
+                Hi, {user?.personName?.firstName}
+              </AccountSettingTitle>
+              <AccountBasicInfoTitle>Basic Information</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <TextField
+                label="First Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={user?.personName?.firstName || ""}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <TextField
+                label="Middle Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={user?.personName?.middleName || ""}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <TextField
+                label="Last Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={user?.personName?.lastName || ""}
+              />
+              
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Email Address"
+                disabled
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                value={user?.emailAddress || ""}
+              />
+            </Grid>
+          {/* Calendar and Phone */}
 
-          {/* Address */}
-          <AccountBasicInfoTitle>Address</AccountBasicInfoTitle>
-          <TextField
-            label="Street"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-          <TextField
-            label="City"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-          <TextField
-            label="State"
-            variant="outlined"
-            fullWidth
-            margin="normal"
+          <Grid item xs={12} md={6}>
+              <CalendarHelper />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <PhoneExt />
+            </Grid>
             
-          />
-          <TextField
-            label="Postal Code"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
-          <TextField
-            label="Country"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
+            {/* Profile Summary */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Summary</AccountBasicInfoTitle>
+              <TextField
+                label="Profile Summary"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                multiline
+                rows={4}
+              />
+            </Grid>
 
-          {/* Education */}
-          <AccountBasicInfoTitle>Education</AccountBasicInfoTitle>
-          <TextField
-            label="Degree"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-          <TextField
-            label="Major"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
-          <TextField
-            label="Institution"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
-          <TextField
-            label="Graduation Date"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            type="date"
-            
-            InputLabelProps={{ shrink: true }}
-          />
-          <TextField
-            label="CGPA"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
+            {/* Address */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Address</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Street"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="City"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="State"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Postal Code"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                label="Country"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-          {/* Skills */}
-          <AccountBasicInfoTitle>Skills</AccountBasicInfoTitle>
-          <TextField
-            label="Skills Title"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-          <TextField
-            label="Skills Description"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
+            {/* Education */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Education</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Degree"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Major"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Institution"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Graduation Date"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                type="date"
+                InputLabelProps={{ shrink: true }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="CGPA"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-          {/* Experience */}
-          <AccountBasicInfoTitle>Experience</AccountBasicInfoTitle>
-          <TextField
-            label="Experience Level"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-          
-          />
+            {/* Skills */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Skills</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Skills Title"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Skills Description"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-         
-          {/* Qualifications */}
-          <AccountBasicInfoTitle>Qualifications</AccountBasicInfoTitle>
-          <TextField
-            label="Qualification Type"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
-          <TextField
-            label="Qualification Information"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            
-          />
+            {/* Experience */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Experience</AccountBasicInfoTitle>
+              <TextField
+                label="Experience Level"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-          {/* LinkedIn Profile */}
-          <AccountBasicInfoTitle>Others</AccountBasicInfoTitle>
-          <TextField
-            label="LinkedIn Profile"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
+            {/* Qualifications */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Qualifications</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Qualification Type"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Qualification Information"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-          {/* Portfolio */}
-         
-          <TextField
-            label="Portfolio"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
+            {/* LinkedIn Profile */}
+            <Grid item xs={12}>
+              <AccountBasicInfoTitle>Others</AccountBasicInfoTitle>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="LinkedIn Profile"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Portfolio"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Interests"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Achievements"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+            </Grid>
 
-
-          {/* Interests */}
-         
-          <TextField
-            label="Interests"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-
-          {/* Achievements */}
-          <TextField
-            label="Achievements"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-           
-          />
-          {/* Save Button */}
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2, mb:3 }}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-            >
-              Save
-            </Button>
-          </Box>
+            {/* Save Button */}
+            <Grid item xs={12}>
+              <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2, mb: 3 }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                >
+                  Save
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </AccountSettingContainer>
-      <Footer/>
+      <Footer />
     </>
   );
 };
