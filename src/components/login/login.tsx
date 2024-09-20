@@ -101,6 +101,8 @@ export default function Login() {
       const LoginUserResponse = await axios.post("http://localhost:5184/api/v1/logins", userLoginPayload);
 
       if (LoginUserResponse.status === 200) {
+        const {token} = LoginUserResponse.data;
+        localStorage.setItem("token", token);
         setUser(LoginUserResponse.data);
         setUserLoggedIn(true);
         setSuccessMessage("Login successful! Redirecting to dashboard...");
